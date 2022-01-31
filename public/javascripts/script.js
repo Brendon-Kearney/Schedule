@@ -4,38 +4,7 @@ const h2Name = document.querySelector("#h2Name")
 const h2Address = document.querySelector("#h2Address")
 const h2Borough = document.querySelector("#h2Borough")
 const h2ZipCode = document.querySelector("#h2ZipCode")
-const tGrades = document.querySelector("#tGrades")
-const nextBtn = document.querySelector("#nextBtn")
-const prevBtn = document.querySelector("#prevBtn")
-
-var pageSize = 2
-var pageNumber = 0
-
-nextBtn.onclick = () =>{
-    pageNumber += 1
-    console.log(pageSize)
-    fetch("restaurant?pageSize=" + pageSize + "&pageNumber=" + pageNumber)
-    .then(divRest.innerHTML="")
-    .then(response => response.json())
-    .then(data => render(data))
-    .catch(error=>alert(error))
-}
-
-prevBtn.onclick = () =>{
-    if(pageNumber > 0)
-    pageNumber -= 1
-    console.log(pageSize)
-    fetch("restaurant?pageSize=" + pageSize + "&pageNumber=" + pageNumber)
-    .then(divRest.innerHTML="")
-    .then(response => response.json())
-    .then(data => render(data))
-    .catch(error=>alert(error))
-}
-
-function setSize(newSize)
-{
-    pageSize = newSize;
-}
+const tClasses = document.querySelector("#tClasses")
 
 btnRest.onclick = ()=>{
     console.log(pageSize)
@@ -50,7 +19,7 @@ btnRest.onclick = ()=>{
 function render(data)
 {
     data.forEach(data =>{
-        const tGrades = document.createElement("table") // open closed tag
+        const tClasses = document.createElement("table") // open closed tag
         let h2Name = document.createElement("h2")
         let h2Address = document.createElement("h2")
         let h2Borough = document.createElement("h2")
@@ -74,7 +43,7 @@ function render(data)
         tr.appendChild(td2)
         tr.appendChild(td3)
 
-        tGrades.appendChild(tr)
+        tClasses.appendChild(tr)
 
         data.grades.forEach(grades =>{
         
@@ -91,7 +60,7 @@ function render(data)
             gtr.appendChild(gtd2)
             gtr.appendChild(gtd3)
 
-            tGrades.appendChild(gtr)
+            tClasses.appendChild(gtr)
             
         })
 
@@ -99,7 +68,7 @@ function render(data)
         divRest.appendChild(h2Address)
         divRest.appendChild(h2Borough)
         divRest.appendChild(h2ZipCode)
-        divRest.appendChild(tGrades)
+        divRest.appendChild(tClasses)
         document.body.appendChild(divRest)
 
     })

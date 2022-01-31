@@ -5,8 +5,7 @@ var mongoQueries = require('./../mongo/queries')
 
 router.get('/', async (req, res) => {
 
-  let result = await mongoQueries.findListings({},
-  parseInt(req.query.pageSize), req.query.pageNumber)
+  let result = await mongoQueries.findListings({})
 
   console.log(result)
   res.send (result)
