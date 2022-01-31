@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <form action="/">
+      <label for="pageSize">Number Of Pages</label>
+      <select id="pageSize" name="pageSize" onchange="setSize(this.value)">  
+        <option value="1" >1</option>  
+        <option value="2" selected="">2</option>  
+        <option value="5">5</option> 
+        <option value="10">10</option> 
+      </select>
+    </form>
+
+    <div id="divRest"></div><br>
+    <button id="btnRest">Get Listing</button><br><br>
+    <button id="prevBtn">Prev</button>
+    <button id="nextBtn">Next</button>
+
+    <script src="/javascripts/script.js"></script>
+  </body>
+</html>
