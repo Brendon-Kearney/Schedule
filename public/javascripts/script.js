@@ -5,6 +5,11 @@ const tClasses = document.querySelector("#tClasses")
 
 var day = ""
 
+function setDay(newDay)
+{
+    day = newDay;
+}
+
 btnRest.onclick = ()=>{
     console.log(day)
     fetch("class?day=" + day)

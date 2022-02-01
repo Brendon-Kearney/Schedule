@@ -5,7 +5,7 @@ var mongoQueries = require('../mongo/queries')
 
 router.get('/', async (req, res) => {
 
-  let result = await mongoQueries.findListings({}, req.query.day)
+  let result = await mongoQueries.findListings(req.query.day)
 
   console.log(result)
   res.send (result)
