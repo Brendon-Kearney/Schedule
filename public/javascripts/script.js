@@ -24,18 +24,19 @@ function render(data)
         h2Day.innerText = data.day;
 
         let tr = document.createElement("tr")
-        let td = document.createElement("td")
         let td2 = document.createElement("td")
         let td3 = document.createElement("td")
+        let td4 = document.createElement("td")
+        let td5 = document.createElement("td")
+        let td6 = document.createElement("td")
 
-        td.innerText = "Day"
         td2.innerText = "Class"
         td3.innerText = "StartTime"
         td4.innerText = "EndTime"
         td5.innerText = "RoomNumber"
         td6.innerText = "AlternativeDelivery"
 
-        tr.appendChild(td) // add javascript to html
+        // add javascript to html
         tr.appendChild(td2)
         tr.appendChild(td3)
         tr.appendChild(td4)
